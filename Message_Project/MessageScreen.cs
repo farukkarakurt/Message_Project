@@ -55,11 +55,21 @@ namespace Message_Project
 
         void GelenKutusu()
         {
-            SqlDataAdapter da1 = new SqlDataAdapter("Select * from TBL_MESAJLAR WHERE ALICI =" + numara, conn);
+            SqlDataAdapter da1 = new SqlDataAdapter("Select * from TBL_MESAJLAR WHERE  ALICI =" + numara, conn);
             DataTable dt1 = new DataTable();
             da1.Fill(dt1);
             dataGridView1.DataSource = dt1;
+            numaralar();
+
+
         }
+        void numaralar()
+        {
+          // inner join kullanarak gönderen gelen kısmındaki sayıları isimlere çevir 
+
+            // yeni kullanıcı olayını ekle
+        }
+
         void GidenKutusu()
         {
             SqlDataAdapter da2 = new SqlDataAdapter("Select * from TBL_MESAJLAR WHERE GONDEREN =" + numara, conn);
